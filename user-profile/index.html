@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | SocialApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-lg font-bold text-blue-800">SocialApp</h1>
+    <nav class="space-x-4 text-sm">
+      <a href="../feed/index.html" class="text-blue-800 hover:underline">Feed</a>
+      <a href="../index.html" class="text-gray-600 hover:underline">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow">
+      <!-- Profile Header -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+        <img src="/images/brett-jordan-uZZ4TwbljUw-unsplash.jpg" alt="Profile Picture" class="w-28 h-28 rounded-full">
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl font-bold text-blue-800">The Dev</h2>
+          <p class="text-gray-500">@thedev</p>
+          <div class="mt-2 flex justify-center md:justify-start gap-4 text-sm text-gray-600">
+            <span><strong>120</strong> Followers</span>
+            <span><strong>80</strong> Following</span>
+          </div>
+          <button class="mt-4 bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900 transition">Follow</button>
+        </div>
+      </div>
+
+      <!-- User's Posts -->
+      <h3 class="text-xl font-semibold mb-4 text-blue-800">Posts</h3>
+      <div class="space-y-4">
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <p class="text-gray-800">Excited to start my new role at DevCompany! </p>
+          <p class="text-sm text-gray-400 mt-1">Posted 1 day ago</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+          <p class="text-gray-800">Tailwind CSS makes designing UIs so much easier </p>
+          <p class="text-sm text-gray-400 mt-1">Posted 3 days ago</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center text-gray-500 text-sm p-4 border-t">
+    &copy; 2025 SocialApp. All rights reserved.
+  </footer>
+
+</body>
+
+</html>
