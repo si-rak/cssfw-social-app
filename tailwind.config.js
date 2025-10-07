@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // use class-based toggle for theme switch
+  darkMode: 'class',
   content: [
     './*.{html,js}',
     './feed/**/*.{html,js}',
@@ -15,18 +15,18 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: '#3B82F6', // main blue
-          dark: '#2563EB', // darker hover blue
-          light: '#93C5FD', // soft accent blue
+          DEFAULT: '#3B82F6',
+          dark: '#2563EB',
+          light: '#93C5FD',
         },
-        // refined background system
-        lightbg: '#F3F4F6', // subtle light gray (comfortable contrast)
-        darkbg: '#0D1117', // elegant deep navy background (GitHub style)
-        cardlight: '#FFFFFF', // white for cards in light mode
-        carddark: '#1E2532', // lighter slate-blue card background for dark mode
+
+        lightbg: '#F3F4F6',
+        darkbg: '#0D1117',
+        cardlight: '#FFFFFF',
+        carddark: '#1E2532',
       },
       boxShadow: {
-        glow: '0 0 10px rgba(59, 130, 246, 0.4)', // soft brand glow (optional use)
+        glow: '0 0 10px rgba(59, 130, 246, 0.4)',
       },
 
       keyframes: {
