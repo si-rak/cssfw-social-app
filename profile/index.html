@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connectify | Profile</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+</head>
+
+<body
+  class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans flex flex-col min-h-screen transition-colors duration-300">
+
+  <!-- HEADER -->
+  <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4 gap-4">
+      <!-- Logo + Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="../index.html" class="text-2xl font-heading font-bold text-brand">Connectify</a>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode"
+          class="relative flex items-center justify-between w-12 h-6 rounded-full px-1 transition-all duration-300 bg-gradient-to-b from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 hover:from-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:to-gray-600 shadow-inner">
+          <!-- Sun Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-yellow-500" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+
+          <!-- Moon Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-blue-400" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+          </svg>
+
+          <!-- Knob -->
+          <div
+            class="absolute top-0.5 left-0.5 w-5 h-5 bg-gradient-to-b from-white to-gray-100 dark:from-gray-600 dark:to-gray-500 rounded-full shadow-md transform transition-transform duration-300">
+          </div>
+        </button>
+
+
+      </div>
+
+      <!-- Hamburger -->
+      <button id="menuBtn"
+        class="sm:hidden relative w-6 h-6 flex flex-col justify-between items-center text-gray-700 dark:text-gray-300 focus:outline-none transition-all duration-300"
+        aria-label="Toggle Menu">
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+      </button>
+
+      <!-- Nav (desktop) -->
+      <nav class="hidden sm:flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+        <a href="../index.html" class="hover:text-brand transition">Logout</a>
+        <a href="../feed/index.html" class="hover:text-brand transition">Feed</a>
+        <a href="./index.html" class="hover:text-brand transition font-medium text-brand">Profile</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu"
+      class="hidden sm:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 animate-fadeIn">
+      <div class="p-4 space-y-4 text-sm text-gray-600 dark:text-gray-300">
+        <a href="../index.html" class="block hover:text-brand transition">Logout</a>
+        <a href="../feed/index.html" class="block hover:text-brand transition">Feed</a>
+        <a href="./index.html" class="block hover:text-brand transition font-medium text-brand">Profile</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- PROFILE -->
+  <section class="relative bg-gradient-to-r from-blue-500 to-purple-600 h-52 flex items-end justify-center">
+    <div class="absolute bottom-0 translate-y-1/2">
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200" alt="Avatar"
+        class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover" />
+    </div>
+  </section>
+
+  <section class="mt-20 text-center px-4 space-y-3">
+    <h2 class="text-2xl font-heading font-semibold">Alex Johnson</h2>
+    <p class="text-gray-500 dark:text-gray-400">@alex_j</p>
+    <p class="text-gray-600 dark:text-gray-300 text-sm max-w-md mx-auto">📍 San Francisco, CA | Photographer | Coffee
+      addict ☕</p>
+
+    <div class="flex justify-center gap-8 text-sm text-gray-600 dark:text-gray-300 mt-4">
+      <span><strong class="text-gray-900 dark:text-white">1.2k</strong> Followers</span>
+      <span><strong class="text-gray-900 dark:text-white">310</strong> Following</span>
+      <span><strong class="text-gray-900 dark:text-white">54</strong> Posts</span>
+    </div>
+
+    <button
+      class="border border-brand text-brand px-6 py-2 rounded-lg text-sm font-medium mt-4 hover:bg-brand/10 transition">
+      Edit Profile
+    </button>
+  </section>
+
+  <!-- POSTS -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 py-12">
+    <h3 class="text-lg font-heading font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">Your Posts</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="bg-cardlight dark:bg-carddark rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600"
+          class="w-full h-52 object-cover" />
+      </div>
+      <div
+        class="bg-cardlight dark:bg-carddark rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600"
+          class="w-full h-52 object-cover" />
+      </div>
+      <div
+        class="bg-cardlight dark:bg-carddark rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+        <img src="https://images.unsplash.com/photo-1531256379411-56c11d868ff0?w=600"
+          class="w-full h-52 object-cover" />
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-xs text-gray-400 py-6">
+    <p>© 2025 Connectify • <a href="#" class="hover:text-brand">Terms</a> • <a href="#"
+        class="hover:text-brand">Privacy</a></p>
+  </footer>
+
+  <script src="../src/scripts/theme.js"></script>
+</body>
+
+</html>
