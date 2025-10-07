@@ -16,9 +16,11 @@
 
   <!-- HEADER -->
   <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4 gap-4">
+
+      <!-- Logo + Toggle -->
       <div class="flex items-center gap-3">
-        <a href="./index.html" class="text-2xl font-heading font-bold text-brand">Connectify</a>
+        <a href="../index.html" class="text-2xl font-heading font-bold text-brand">Connectify</a>
 
         <!-- Theme Toggle -->
         <button id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode"
@@ -37,10 +39,40 @@
           </div>
         </button>
       </div>
-      <nav class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
-        <a href="./feed/index.html" class="hover:text-brand transition">Feed</a>
-        <a href="./profile/index.html" class="hover:text-brand transition">Profile</a>
+
+      <!-- Hamburger -->
+      <button id="menuBtn"
+        class="sm:hidden relative w-6 h-6 flex flex-col justify-between items-center text-gray-700 dark:text-gray-300 focus:outline-none transition-all duration-300"
+        aria-label="Toggle Menu">
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+        <span class="block w-full h-0.5 bg-current transform transition-all duration-300"></span>
+      </button>
+
+      <!-- Search (desktop) -->
+      <div class="hidden sm:flex flex-grow justify-center">
+        <input type="text" placeholder="Search posts..."
+          class="w-72 md:w-96 border border-gray-300 dark:border-gray-700 rounded-lg py-2 px-3 text-sm bg-white dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
+      </div>
+
+      <!-- Nav (desktop) -->
+      <nav class="hidden sm:flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+        <a href="../index.html" class="hover:text-brand transition">Logout</a>
+        <a href="./index.html" class="hover:text-brand transition font-medium text-brand">Feed</a>
+        <a href="../profile/index.html" class="hover:text-brand transition">Profile</a>
       </nav>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu"
+      class="hidden sm:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 animate-fadeIn">
+      <div class="p-4 space-y-4 text-sm text-gray-600 dark:text-gray-300">
+        <input type="text" placeholder="Search posts..."
+          class="w-full border border-gray-300 dark:border-gray-700 rounded-lg py-2 px-3 text-sm bg-white dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
+        <a href="../index.html" class="block hover:text-brand transition">Logout</a>
+        <a href="./index.html" class="block hover:text-brand transition font-medium text-brand">Feed</a>
+        <a href="../profile/index.html" class="block hover:text-brand transition">Profile</a>
+      </div>
     </div>
   </header>
 
@@ -66,10 +98,8 @@
             class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent outline-none bg-white dark:bg-gray-900 transition" />
           <p class="text-xs text-gray-400 mt-1">Password must be at least 8 characters</p>
         </div>
-
         <button type="submit"
           class="w-full bg-brand hover:bg-brand-dark text-white font-medium py-2 rounded-lg transition-colors">Login</button>
-
         <div class="text-center text-sm text-gray-400">or continue with</div>
 
         <!-- Social Login Buttons -->
@@ -80,7 +110,6 @@
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5" />
             <span>Google</span>
           </a>
-
           <!-- Facebook -->
           <a href="https://facebook.com" target="_blank"
             class="flex-1 border border-gray-300 dark:border-gray-700 rounded-lg py-2 flex items-center justify-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
