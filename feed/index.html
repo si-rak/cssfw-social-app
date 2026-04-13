@@ -15,11 +15,11 @@
 </head>
 
 <body
-  class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans flex flex-col min-h-screen transition-colors duration-300">
+  class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 font-sans flex flex-col min-h-screen transition-all duration-300">
 
   <!-- HEADER -->
   <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4 gap-4">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between px-6 py-4 gap-4">
 
       <!-- Logo + Toggle -->
       <div class="flex items-center gap-3">
@@ -50,19 +50,18 @@
       <nav class="hidden sm:flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
         <span id="userEmail" class="text-xs text-gray-400"></span>
 
-        <!-- LOGOUT -->
-        <button onclick="logoutUser()" class="hover:text-brand">
+        <button onclick="logoutUser()" class="hover:text-brand transition">
           Logout
         </button>
 
         <a href="./index.html" class="text-brand font-medium">Feed</a>
-        <a href="../profile/index.html" class="hover:text-brand">Profile</a>
+        <a href="../profile/index.html" class="hover:text-brand transition">Profile</a>
       </nav>
     </div>
   </header>
 
   <!-- MAIN -->
-  <main class="flex-grow max-w-6xl mx-auto px-4 py-10 space-y-8">
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-10 space-y-8">
 
     <!-- CREATE POST -->
     <section
@@ -82,7 +81,7 @@
 
         <div class="flex items-center justify-between flex-wrap gap-3">
 
-          <!--  MODERN IMAGE ICON (SMALL + CLEAN) -->
+          <!-- IMAGE BUTTON -->
           <label class="cursor-pointer text-sm text-gray-400">
             <input id="postImage" type="file" accept="image/*" class="hidden" />
             <span
@@ -98,7 +97,9 @@
             </span>
           </label>
 
-          <button type="submit" class="bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-lg">
+          <!-- 🔥 UPDATED PREMIUM BUTTON -->
+          <button type="submit"
+            class="bg-brand hover:bg-brand-dark text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
             Post
           </button>
 
@@ -121,7 +122,7 @@
   <script src="../src/scripts/theme.js"></script>
   <script src="../src/scripts/feed.js"></script>
 
-  <!--  AUTH SYSTEM -->
+  <!-- AUTH -->
   <script src="../src/scripts/auth.js"></script>
   <script>
     checkAuth();

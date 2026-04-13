@@ -1,5 +1,6 @@
 const form = document.getElementById('postForm');
 const postsContainer = document.getElementById('postsContainer');
+
 const currentUser = JSON.parse(localStorage.getItem('connectifyUser'));
 document.getElementById('userEmail').textContent = currentUser.email;
 
@@ -49,6 +50,7 @@ function createPost(title, content, image) {
   localStorage.setItem('posts', JSON.stringify(posts));
 
   form.reset();
+  alert("✅ Post created successfully!");
   renderPosts();
 }
 
@@ -59,7 +61,12 @@ function renderPosts() {
   postsContainer.innerHTML = '';
 
   if (posts.length === 0) {
-    postsContainer.innerHTML = `<p class="text-gray-400">No posts yet.</p>`;
+    postsContainer.innerHTML = `
+      <div class="col-span-full text-center text-gray-400">
+        <p class="text-lg">😕 No posts yet</p>
+        <p class="text-sm">Start by creating your first post</p>
+      </div>
+    `;
     return;
   }
 
@@ -67,43 +74,43 @@ function renderPosts() {
     const postEl = document.createElement('article');
 
     postEl.className =
-      'bg-cardlight dark:bg-carddark rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden';
+      'bg-cardlight dark:bg-carddark rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden';
 
     postEl.innerHTML = `
       ${post.image ? `<img src="${post.image}" class="w-full h-48 object-cover" />` : ''}
 
       <div class="p-5 space-y-2">
-        <h3 class="font-semibold">${post.title}</h3>
-        <p class="text-sm text-gray-400">${post.content}</p>
+        <h3 class="font-semibold text-gray-800 dark:text-white">${post.title}</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">${post.content}</p>
 
         <div class="flex justify-between items-center text-xs text-gray-500">
 
           <span>@${post.author} • ${post.time}</span>
 
-        <div class="flex gap-4 items-center text-gray-300">
+          <div class="flex items-center gap-3 text-gray-400">
 
-  <!-- LIKE (always visible) -->
-  <button data-id="${post.id}" class="likeBtn flex items-center gap-1 text-pink-500 hover:scale-110 transition">
-    ❤️ <span class="text-sm">${post.likes}</span>
-  </button>
+            <!-- LIKE -->
+            <button data-id="${post.id}" class="likeBtn flex items-center gap-1 hover:text-pink-500 transition">
+              ❤️ <span class="text-xs">${post.likes}</span>
+            </button>
 
-  ${
-    post.author === currentUser.email
-      ? `
-        <!-- EDIT -->
-        <button data-id="${post.id}" class="editBtn hover:scale-110 transition">
-          ✏️
-        </button>
+            ${
+              post.author === currentUser.email
+                ? `
+                <!-- EDIT -->
+                <button data-id="${post.id}" class="editBtn flex items-center justify-center w-5 h-5 hover:text-white transition">
+                  ✏️
+                </button>
 
-        <!-- DELETE -->
-        <button data-id="${post.id}" class="deleteBtn hover:scale-110 transition">
-          🗑️
-        </button>
-      `
-      : ''
-  }
+                <!-- DELETE -->
+                <button data-id="${post.id}" class="deleteBtn flex items-center justify-center w-5 h-5 hover:text-red-500 transition">
+                  🗑️
+                </button>
+              `
+                : ''
+            }
 
-</div>
+          </div>
 
         </div>
       </div>
